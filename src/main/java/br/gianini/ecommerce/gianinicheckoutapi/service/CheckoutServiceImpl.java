@@ -3,21 +3,24 @@ package br.gianini.ecommerce.gianinicheckoutapi.service;
 import br.gianini.ecommerce.gianinicheckoutapi.entity.CheckoutEntity;
 import br.gianini.ecommerce.gianinicheckoutapi.repository.CheckoutRepository;
 import br.gianini.ecommerce.gianinicheckoutapi.resource.checkout.CheckoutRequest;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+//@AllArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor // new way to inject dependencies learned
 public class CheckoutServiceImpl implements CheckoutService {
 
     private final CheckoutRepository checkoutRepository;
 
-
     @Override
     public Optional<CheckoutEntity> create(CheckoutRequest checkoutRequest) {
-        return Optional.empty();
+        final CheckoutEntity checkoutEntity = CheckoutEntity.builder()
+                .code(UUID.randomUUID().toString())
+                .build();
+        return Optional.of(checkoutRepository.save(checkoutEntity));
     }
 }
