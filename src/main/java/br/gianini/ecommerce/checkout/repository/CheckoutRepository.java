@@ -1,6 +1,6 @@
-package br.gianini.ecommerce.gianinicheckoutapi.repository;
+package br.gianini.ecommerce.checkout.repository;
 
-import br.gianini.ecommerce.gianinicheckoutapi.entity.CheckoutEntity;
+import br.gianini.ecommerce.checkout.entity.CheckoutEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package br.gianini.ecommerce.gianinicheckoutapi.resource.checkout;
+package br.gianini.ecommerce.checkout.resource.checkout;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
